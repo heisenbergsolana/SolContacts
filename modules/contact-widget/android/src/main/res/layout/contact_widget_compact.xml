@@ -1,0 +1,78 @@
+<!-- The square, 2x2: who it is on top, the code and the copy button sharing the row below it. The
+     button sits in the corner beside the code rather than as a bar under it — a full-width bar
+     left the code small and the bottom of the widget empty. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_surface"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+  <LinearLayout
+      android:id="@+id/widget_details"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/widget_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/widget_preview_name"
+        android:textColor="@color/widget_text"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/widget_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="monospace"
+        android:maxLines="1"
+        android:paddingTop="1dp"
+        android:text="@string/widget_preview_address"
+        android:textColor="@color/widget_text_muted"
+        android:textSize="11sp" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginTop="8dp"
+      android:layout_weight="1"
+      android:gravity="bottom"
+      android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/widget_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@drawable/widget_qr_surface"
+        android:padding="4dp"
+      android:src="@drawable/widget_qr_placeholder" />
+
+    <!-- Weighted rather than a margin: the button stays in the corner whatever the code measures. -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom|end"
+        android:orientation="horizontal">
+
+      <ImageButton
+          android:id="@+id/widget_copy"
+          android:layout_width="42dp"
+          android:layout_height="42dp"
+          android:background="@drawable/widget_button"
+          android:contentDescription="@string/widget_copy_description"
+          android:padding="11dp"
+          android:scaleType="fitCenter"
+          android:src="@drawable/ic_widget_copy" />
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

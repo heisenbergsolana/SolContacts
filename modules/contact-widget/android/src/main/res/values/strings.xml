@@ -1,0 +1,22 @@
+<resources>
+  <string name="widget_label">SolContacts QR</string>
+  <string name="widget_label_row">SolContacts address</string>
+  <string name="widget_label_wide">SolContacts address (wide)</string>
+  <string name="widget_description">A saved contact\'s QR code, with its address one tap from the clipboard.</string>
+  <string name="widget_description_strip">A saved contact\'s name and shortened address, one tap from the clipboard.</string>
+  <string name="widget_copy_description">Copy the wallet address</string>
+  <string name="widget_qr_description">%1$s\'s address as a QR code</string>
+  <string name="widget_clip_label">Solana address</string>
+  <string name="widget_copied">Copied!</string>
+  <!-- Dropped from the launcher's own picker: it has never been given a contact. -->
+  <string name="widget_empty_title">Add a Solana address</string>
+  <string name="widget_empty_body">Tap to pick a contact</string>
+  <!-- Bound once, but the contact it pointed at is gone. -->
+  <string name="widget_unavailable_title">Contact unavailable</string>
+  <string name="widget_unavailable_body">Tap to pick another</string>
+  <string name="widget_choose_description">Choose a contact for this widget</string>
+  <!-- Only ever seen in the launcher's picker: the provider replaces both before a widget is drawn.
+       Without them the picker offers three near-identical dark rectangles. -->
+  <string name="widget_preview_name">Ada</string>
+  <string name="widget_preview_address">7xKX…gAsU</string>
+</resources>

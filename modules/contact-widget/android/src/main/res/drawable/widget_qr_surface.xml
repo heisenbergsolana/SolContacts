@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+  <!-- White in every theme: scanners need the quiet zone, and an inverted code is unreliable. -->
+  <solid android:color="#FFFFFF" />
+  <corners android:radius="10dp" />
+</shape>

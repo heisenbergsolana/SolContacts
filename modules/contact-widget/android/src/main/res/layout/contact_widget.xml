@@ -1,0 +1,64 @@
+<!-- Wide and at least two cells tall: the only size with room for the whole address, which is the
+     one thing a user checks before sending to it. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_surface"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="14dp">
+
+  <LinearLayout
+      android:id="@+id/widget_details"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:paddingEnd="14dp">
+
+    <TextView
+        android:id="@+id/widget_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/widget_preview_name"
+        android:textColor="@color/widget_text"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/widget_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="middle"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="2"
+        android:paddingTop="4dp"
+        android:text="@string/widget_preview_address"
+        android:textColor="@color/widget_text_muted"
+        android:textSize="13sp" />
+  </LinearLayout>
+
+  <ImageView
+      android:id="@+id/widget_qr"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:adjustViewBounds="true"
+      android:background="@drawable/widget_qr_surface"
+      android:padding="6dp"
+      android:src="@drawable/widget_qr_placeholder" />
+
+  <ImageButton
+      android:id="@+id/widget_copy"
+      android:layout_width="46dp"
+      android:layout_height="46dp"
+      android:layout_marginStart="12dp"
+      android:background="@drawable/widget_button"
+      android:contentDescription="@string/widget_copy_description"
+      android:padding="12dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/ic_widget_copy" />
+</LinearLayout>

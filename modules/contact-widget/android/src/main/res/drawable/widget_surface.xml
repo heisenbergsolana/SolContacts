@@ -1,0 +1,72 @@
+<!--
+  The app's own background, on a widget's scale: blue glows bled into near-black, bottom-heavy,
+  with the top left left dark for the name and address to sit on.
+
+  Three sources rather than the app's four, and three stops each rather than four — a shape's
+  gradient allows no more, and at 76-330dp wide the fourth source had nothing left to light. The
+  radii are absolute so the same glow does not turn into a flat wash on the smallest size.
+
+  Colours and centres track components/dark-glow-background.tsx. Change one, change the other.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <shape android:shape="rectangle">
+      <solid android:color="@color/widget_surface" />
+      <corners android:radius="20dp" />
+    </shape>
+  </item>
+
+  <!-- Bottom left: the brightest source, thrown diagonally up into the black middle. -->
+  <item>
+    <shape android:shape="rectangle">
+      <gradient
+          android:centerColor="#591A34BD"
+          android:centerX="0.04"
+          android:centerY="1.0"
+          android:endColor="#001A34BD"
+          android:gradientRadius="180dp"
+          android:startColor="#CC1A34BD"
+          android:type="radial" />
+      <corners android:radius="20dp" />
+    </shape>
+  </item>
+
+  <!-- Bottom right: deeper and more contained than the left. -->
+  <item>
+    <shape android:shape="rectangle">
+      <gradient
+          android:centerColor="#47101F6E"
+          android:centerX="1.02"
+          android:centerY="0.92"
+          android:endColor="#00101F6E"
+          android:gradientRadius="130dp"
+          android:startColor="#A6101F6E"
+          android:type="radial" />
+      <corners android:radius="20dp" />
+    </shape>
+  </item>
+
+  <!-- Upper right: dim enough to read as spill rather than a second light. -->
+  <item>
+    <shape android:shape="rectangle">
+      <gradient
+          android:centerColor="#3315287D"
+          android:centerX="0.88"
+          android:centerY="0.0"
+          android:endColor="#0015287D"
+          android:gradientRadius="140dp"
+          android:startColor="#7315287D"
+          android:type="radial" />
+      <corners android:radius="20dp" />
+    </shape>
+  </item>
+
+  <!-- Last, so the glows stop at the edge rather than painting over it. -->
+  <item>
+    <shape android:shape="rectangle">
+      <solid android:color="@android:color/transparent" />
+      <stroke android:width="1dp" android:color="@color/widget_border" />
+      <corners android:radius="20dp" />
+    </shape>
+  </item>
+</layer-list>

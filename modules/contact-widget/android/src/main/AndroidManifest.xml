@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <application>
+    <receiver
+      android:name="expo.modules.contactwidget.ContactWidgetProvider"
+      android:exported="false"
+      android:label="@string/widget_label">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      </intent-filter>
+      <meta-data
+        android:name="android.appwidget.provider"
+        android:resource="@xml/contact_widget_info" />
+    </receiver>
+
+    <!-- One receiver per size: the launcher's picker lists providers, not resize options, so a
+         size the user can choose up front has to be its own provider. All three draw through the
+         same code — only the cells they ask for differ. -->
+    <receiver
+      android:name="expo.modules.contactwidget.ContactWidgetRowProvider"
+      android:exported="false"
+      android:label="@string/widget_label_row">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      </intent-filter>
+      <meta-data
+        android:name="android.appwidget.provider"
+        android:resource="@xml/contact_widget_row_info" />
+    </receiver>
+
+    <receiver
+      android:name="expo.modules.contactwidget.ContactWidgetWideProvider"
+      android:exported="false"
+      android:label="@string/widget_label_wide">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      </intent-filter>
+      <meta-data
+        android:name="android.appwidget.provider"
+        android:resource="@xml/contact_widget_wide_info" />
+    </receiver>
+  </application>
+</manifest>

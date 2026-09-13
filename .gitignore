@@ -1,0 +1,70 @@
+# ---- Dependencies ----
+node_modules/
+
+# ---- Expo ----
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+app-example
+.metro-health-check*
+
+# ---- Generated native folders ----
+/android
+/ios
+.kotlin/
+*.orig.*
+
+# ---- Build output ----
+*.apk
+*.aab
+*.ipa
+
+# ---- Signing material: NEVER commit ----
+*.keystore
+*.jks
+*.p8
+*.p12
+*.key
+*.pepk
+*.pem
+*.mobileprovision
+keystores/
+credentials.json
+google-services.json
+
+# ---- Environment / secrets ----
+.env
+.env*.local
+!.env.example
+
+# ---- Testing ----
+coverage/
+
+# ---- TypeScript ----
+*.tsbuildinfo
+
+# ---- Editors / OS ----
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+*.swp
+*~
+
+# ---- Logs ----
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# ---- Python (the asset generators) ----
+__pycache__/
+*.pyc
+
+# ---- Misc ----
+.tmp/
+
+# Local Expo modules build their own Android output in-tree
+modules/*/android/build/
+modules/*/android/.gradle/

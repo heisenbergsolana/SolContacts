@@ -1,0 +1,21 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'com.solcontacts.app'
+version = '0.6.0'
+
+android {
+  namespace 'expo.modules.contactwidget'
+  defaultConfig {
+    versionCode 1
+    versionName '0.6.0'
+  }
+}
+
+dependencies {
+  // The widget renders its own QR: a home-screen widget is RemoteViews, so it cannot reach the
+  // JavaScript that draws the in-app code, and re-rendering on resize has to work with the app shut.
+  implementation 'com.google.zxing:core:3.5.3'
+}
